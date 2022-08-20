@@ -158,3 +158,29 @@ a {
     padding-left: 0;
   }
 }
+
+/* Icons */
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.icon--primary {
+  fill: var(--color-primary); /* fill 属性，只对svg图标有效 */
+}
+
+/* 为什么使用 “-”, 因为这不是icon类的分类或者修饰类 */
+/* 这是一个全新的类。我们用一个短横线来分割不同的词 */
+.icon-container {
+  background: #f3f9fa;
+  /* span 是一个inline element， width & height 不起作用
+    所以使用 ·display: inline-block·
+    不使用block是因为可以将他放在一个行内，但又不希望他换行
+  */
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+  display: inline-flex; /* inline-flex 可以促使icon居中 */
+  justify-content: center; /* 主轴内容对齐， 用来设置主轴的对齐方式，默认是水平方向 */
+  align-items: center; /* 设置正交对齐方式，用来设置正交轴的对齐方式， 默认正交轴是垂直方向 */
+}
