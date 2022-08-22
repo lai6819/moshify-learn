@@ -782,3 +782,16 @@ a {
   max-width: 500px;
   margin: auto;
 }
+
+/* Features */
+.feature {
+  gap: 4rem 2rem;
+}
+
+.feature__heading {
+  margin: 1rem 0;
+}
+
+.feature__image {
+  width: 100%;
+}
