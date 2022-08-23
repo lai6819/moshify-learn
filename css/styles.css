@@ -16,6 +16,12 @@
 }
 
 /* Typography */
+
+::selection {
+  background: var(--color-primary);
+  color: #fff;
+}
+
 html {
   /* 62.5% of 16px = 10px */
   font-size: 62.5%;
@@ -48,6 +54,7 @@ h2 {
 
 h3 {
   font-size: 3rem;
+  font-weight: 500;
 }
 
 p {
@@ -145,7 +152,6 @@ a {
 .list {
   list-style: none; /* 将默认的列表符号去掉 */
   padding-left: 0; /* 去掉所有浏览器给列表的外边距 */
-  color: var(--color-headings);
 }
 
 /* 创建行内列表的类 */
@@ -157,6 +163,7 @@ a {
 .list--tick {
   list-style-image: url(../images/tick.svg);
   padding-left: 3rem;
+  color: var(--color-headings);
 }
 
 .list--tick .list__item {
@@ -431,6 +438,7 @@ a {
 /* Media */
 .media {
   display: flex;
+  margin-bottom: 4rem;
 }
 
 .media__title {
@@ -633,7 +641,9 @@ a {
   color: #7b858b;
 }
 
-.block--dark .block__heading {
+.block--dark h1,
+.block--dark h2,
+.block--dark h3 {
   color: #fff;
 }
 
@@ -641,13 +651,13 @@ a {
 .block--skewed-right {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
   /* （x, y)， 从区块的左上角开始， 然后是右上角， 右下角， 左下角*/
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
 }
 
 .block--skewed-left {
   padding-bottom: calc(var(--padding-vertical) + 4rem);
   /* （x, y)， 从区块的左上角开始， 然后是右上角， 右下角， 左下角*/
-  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
 }
 
 .container {
@@ -721,9 +731,6 @@ a {
 }
 
 /* Hero */
-.hero {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
-}
 
 .hero__tagline {
   font-size: 2rem;
@@ -804,5 +811,25 @@ a {
 @media screen and (min-width: 768px) {
   .feature:nth-of-type(even) .feature__content {
     order: 2;
+  }
+}
+
+/* Showcase Block */
+.block-showcase__image > img {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .block-showcase .grid {
+    grid-template-columns: 50% 50%;
+  }
+
+  .block-showcase__image {
+    justify-self: end;
+  }
+
+  .block-showcase__image > img {
+    width: auto;
+    max-width: 700px;
   }
 }
