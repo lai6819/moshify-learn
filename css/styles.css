@@ -225,7 +225,7 @@ a {
   font-weight: 600;
   margin: 1rem 0;
   outline: 0;
-  padding: 2rem 3rem;
+  padding: 2rem 4vw;
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
@@ -316,6 +316,7 @@ a {
   border: 0;
   flex-grow: 1;
   padding: 1.5rem 2rem;
+  width: 0;
 }
 
 .input-group .btn {
@@ -371,11 +372,11 @@ a {
 }
 
 .plan__price {
-  font-size: 6rem;
+  font-size: 5rem;
 }
 
 .plan__billing-cycle {
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: 300;
   opacity: 0.8;
   margin-right: 1rem;
@@ -386,10 +387,6 @@ a {
   font-weight: 300;
   letter-spacing: 1px;
   display: block;
-}
-
-.plan--popular {
-  transform: scale(1.1);
 }
 
 .plan .list__item {
@@ -404,7 +401,7 @@ a {
   content: url(../images/popular.svg);
   width: 40px;
   display: inline-block;
-  position: absolute; /* 需要将它的父级元素设为相对定位 */
+  position: absolute;
   top: -6px;
   right: 5%;
 }
@@ -418,6 +415,10 @@ a {
 }
 
 @media screen and (min-width: 1024px) {
+  .plan--popular {
+    transform: scale(1.1);
+  }
+
   .plan__name {
     font-size: 1.4rem;
   }
@@ -524,6 +525,11 @@ a {
   padding: 3rem;
 }
 
+.testimonial .quote {
+  margin: 2rem 0;
+  font-size: 110%;
+}
+
 .testimonial__image {
   position: relative;
   margin: 0 3rem;
@@ -532,7 +538,6 @@ a {
 .testimonial__image > img {
   width: 100%;
 }
-
 .testimonial__image > .icon-container {
   position: absolute;
   top: 3rem;
@@ -544,14 +549,10 @@ a {
     margin: 0;
   }
 
-  .testimonial .quote,
-  .testimonial .quote__author {
-    font-size: 2.4rem;
-  }
-
   .testimonial .quote {
-    margin-left: 6rem;
-    margin-right: 0;
+    margin: 5rem 0 0 6rem;
+    font-size: 120%;
+    line-height: 1.5;
   }
 }
 
@@ -770,8 +771,9 @@ a {
 }
 
 .block-domain__prices {
+  color: var(--color-headings);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 6rem);
   font-size: 2rem;
   font-weight: 600;
@@ -844,6 +846,7 @@ a {
 /* Footer */
 .footer {
   background: #232323;
+  padding-top: 10rem;
 }
 
 .footer a {
@@ -867,6 +870,8 @@ a {
 .footer__heading {
   text-transform: uppercase;
   font-weight: 600;
+  font-size: 2.5rem;
+  line-height: 1.5;
 }
 
 .footer__brand {
@@ -877,7 +882,7 @@ a {
 .footer__brand img {
   /* TODO: Consider refactoring this and applying it to 
   all images.*/
-  width: 100%;
+  /* width: 100%; */
   max-width: 230px;
 }
 
@@ -888,12 +893,11 @@ a {
 }
 
 @media screen and (min-width: 768px) {
+  .footer {
+    font-size: 1.5rem;
+  }
   .footer__sections {
     grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  }
-
-  .footer__section {
-    border: 0;
   }
 
   .footer .collapsible__chevron {
@@ -911,5 +915,13 @@ a {
 
   .footer__copyright {
     font-size: 1.5rem;
+  }
+
+  .footer__section {
+    border: 0;
+  }
+
+  .footer__heading {
+    font-size: 1.6rem;
   }
 }
